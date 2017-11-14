@@ -20,7 +20,7 @@ public class PatternExample2 {
 		}
 
 		regExp = "[ㄱ-ㅎ|ㅏ-ㅣ|가-휳]";
-		data = "1231313131313kd";
+		data = "횽";
 
 		if (result) {
 			System.out.println("기준에 부합합니다");

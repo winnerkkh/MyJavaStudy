@@ -20,7 +20,8 @@ public class MemberExample {
 		
 				System.out.println("회원가입 하시겠습니까?");
 				System.out.println();
-				String idRegularExp = "(^[a-z0-9] {5,20})";
+				//String regularExp = "(^[a-z0-9] {5,20})";
+				String regularExp = "^[a-zA-Z0-9_-]{5,20}";
 				
 			
 
@@ -30,21 +31,25 @@ public class MemberExample {
 				
 				String id = scanner.next();
 
-				result = Pattern.matches(idRegularExp, id);
+				result = Pattern.matches(regularExp, id);
 
 				if (result == true) {
+					System.out.println();
 					System.out.println("ID기준의 부합 합니다!");
 				}
 				
 				else {
 
 					while(isContunueID) {
+						System.out.println();
 						System.out.println("ID기준의 부합 하지 않습니다!");
+						System.out.println();
 						System.out.println("ID를 입력하여 주세요");
 						String idRe = scanner.next();
-						result = Pattern.matches(idRegularExp, idRe);
+						result = Pattern.matches(regularExp, idRe);
 
 						if(result==true) {
+							System.out.println();
 							System.out.println("ID기준의 부합 합니다!");
 							id = idRe;
 							isContunueID = false;
@@ -53,28 +58,32 @@ public class MemberExample {
 					}	
 				}
 				
-				
-
-				idRegularExp = "[ㄱ-ㅎ|ㅏ-ㅣ|가-휳]";
-				System.out.print("Password를 입력하여 주세요");
+			
+				regularExp = "^[a-zA-Z0-9~!@#$%^&*]{6,16}";
+				System.out.println();
+				System.out.println("Password를 입력하여 주세요");
 				System.out.println("Password 6~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.");
 				String password = scanner.next();
-				result = Pattern.matches(idRegularExp, password);
+				result = Pattern.matches(regularExp, password);
 				
 				
 				if (result == true) {
+					System.out.println();
 					System.out.println("Password기준의 부합 합니다!");
 				}
 				
 				else {	
 					while(isContunuePassword) {
+						System.out.println();
 						System.out.println("Password기준의 부합 하지 않습니다!");
+						System.out.println();
 						System.out.println("Password 6~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.");
 						System.out.println("Password를 입력하여 주세요");
 						String passRe = scanner.next();
-						result = Pattern.matches(idRegularExp, passRe);
+						result = Pattern.matches(regularExp, passRe);
 					
 						if(result==true) {
+							System.out.println();
 							System.out.println("Password기준의 부합 합니다!");
 							password=passRe;
 							isContunuePassword = false;
@@ -85,27 +94,33 @@ public class MemberExample {
 				}
 		
 	
-				idRegularExp = "([ㄱ-ㅎ|ㅏ-ㅣ|가-휳] {1,4})";
+				regularExp = "([ㄱ-ㅎ|ㅏ-ㅣ|가-휳] {1,4})";
+				//regularExp = "[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]";
+				
 				System.out.print("이름을 입력하여 주세요");
 				System.out.println("이름은 한글로 5자이하로만 입력해 주세요.");
 				String name = scanner.next();
-				result = Pattern.matches(idRegularExp, name);
+				result = Pattern.matches(regularExp, name);
 				
 				
 				if (result == true) {
+					System.out.println();
 					System.out.println("이름 입력 기준의 부합 합니다!");
 				}
 				
 				else {
 					
 					while(isContunuename) {
+						System.out.println();
 						System.out.println("이름 입력 기준의 부합 하지 않습니다!");
+						System.out.println();
 						System.out.println("이름을 입력하여 주세요");
 						System.out.println("이름은 한글로 5자이하로만 입력해 주세요.");
 						String nameRe = scanner.next();
-						result = Pattern.matches(idRegularExp, nameRe);
+						result = Pattern.matches(regularExp, nameRe);
 						
 						if(result==true) {
+							System.out.println();
 							System.out.println("이름 입력 기준의 부합 합니다!");
 							name=nameRe;
 							isContunuename = false;
