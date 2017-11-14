@@ -1,21 +1,20 @@
 package test_171109_weekend_homework;
 
 public class Member {
-	
-	//필드
+	// 필드
 	private String id;
 	private String password;
 	private String name;
-	
-	//생성자
+
+	// 생성자
 	public Member(String id, String password, String name) {
+		super();
 		this.id = id;
 		this.password = password;
 		this.name = name;
 	}
-	
-	
-	//메소드
+
+	// 메소드
 	public String getId() {
 		return id;
 	}
@@ -39,8 +38,5 @@ public class Member {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	
-	
-	
+
 }
