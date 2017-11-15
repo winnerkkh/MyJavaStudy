@@ -61,11 +61,14 @@ public class GoodsExample {
 					+ ((remainMonth > 0) ? remainMonth + "개월 " : "") + period.getDays() + "일 남았습니다 ");
 			
 			System.out.println("행사 종료일은 오늘인 " + goodsEvent.getStartDate() + "일 부터 " + remainDay + "일 남았습니다 ");
+			System.out.println("서두르세요!! 행사기간동안 1개당 800원에 구매 하실수 있습니다!" );
 		}
 		
 		//개월수를 제외한 일수만 출력
 		else {
 			System.out.println("행사 종료일은 오늘인 " + goodsEvent.getStartDate() + "일 부터 " + remainDay + "일 남았습니다 ");
+			System.out.println("서두르세요!! 행사기간동안 1개당 800원에 구매 하실수 있습니다!" );
+			
 		} 
 	}
 }
