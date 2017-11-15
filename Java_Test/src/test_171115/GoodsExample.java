@@ -47,28 +47,31 @@ public class GoodsExample {
 		long remainDay = ChronoUnit.DAYS.between(goodsEvent.getStartDate(), goodsEvent.getEndDate());
 		Period period = Period.between(goodsEvent.getStartDate(), goodsEvent.getEndDate());
 
-		//출력
+	
+		// 오늘의 날짜가 행사기간을 넘어설 경우 출력되는 메세지
+		//isAfter() 메소드를 이용하여 날짜가 지났을 경우가 확인되면 다음 메시지 출력
 		System.out.println();
-		System.out.println(goods.getName() + " 프로모션 행사!");
-		System.out.println(goods.getName() + " 정상 가격은 " + goods.getPrice() + " 입니다");
-		System.out.println("기간은 " + goodsEvent.getStartDate() + " 부터" + goodsEvent.getEndDate() + "까지 입니다!");
-
+		if((startDate.isAfter(eventDate))) {
+			System.out.println("새우깡 행사기간이 이미 지났습니다. 아쉽지만 1000원에 구입하세요");
+		}
+		
 		// 개월까지 명시된 개월 및 일수 출력
-
-		if (remainMonth > 0) {
+		else if (remainMonth > 0) {
+			//출력
 			//3항 연산자를 이용하여 개월수 출력 유무 확인
-			System.out.println("행사 종료일은 오늘인 " + goodsEvent.getStartDate() + "일 부터 "
+			System.out.println(goods.getName() + " 프로모션 행사!");
+			System.out.println(goods.getName() + " 정상 가격은 " + goods.getPrice() + " 입니다");
+			System.out.println("행사 종료일은 오늘인 " + goodsEvent.getStartDate() + "일 부터 " + goodsEvent.getEndDate()+ "까지  "
 					+ ((remainMonth > 0) ? remainMonth + "개월 " : "") + period.getDays() + "일 남았습니다 ");
-			
-			System.out.println("행사 종료일은 오늘인 " + goodsEvent.getStartDate() + "일 부터 " + remainDay + "일 남았습니다 ");
-			System.out.println("서두르세요!! 행사기간동안 1개당 800원에 구매 하실수 있습니다!" );
+			System.out.println("서두르세요!! 행사기간동안 새우깡 1개당 800원에 구매 하실수 있습니다!" );
 		}
 		
 		//개월수를 제외한 일수만 출력
 		else {
-			System.out.println("행사 종료일은 오늘인 " + goodsEvent.getStartDate() + "일 부터 " + remainDay + "일 남았습니다 ");
-			System.out.println("서두르세요!! 행사기간동안 1개당 800원에 구매 하실수 있습니다!" );
-			
+			System.out.println(goods.getName() + " 프로모션 행사!");
+			System.out.println(goods.getName() + " 정상 가격은 " + goods.getPrice() + " 입니다");
+			System.out.println("행사 종료일은 오늘인 " + goodsEvent.getStartDate() + "일 부터 " + goodsEvent.getEndDate()+ "까지"+ remainDay + "일 남았습니다 ");
+			System.out.println("서두르세요!! 행사기간동안 새우깡 1개당 800원에 구매 하실수 있습니다!" );
 		} 
 	}
 }
