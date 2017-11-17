@@ -1,5 +1,6 @@
 package p05.map;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -13,6 +14,7 @@ public class HashMapExample {
 	public static void main(String[] args) {
 		// Map객체 생성
 		Map<String, Integer> map = new HashMap<>();
+		map = Collections.synchronizedMap(map);
 
 		// 객체 저장
 		map.put("홍길동", 85);// <K,V> 첫번째와 네번째는 키가 "홍길동"으로 동일
