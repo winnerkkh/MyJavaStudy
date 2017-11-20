@@ -14,7 +14,7 @@ public class ClientExample {
 			socket = new Socket();// 클라이언트는 하나의 소켓만 생성
 			System.out.println("[연결요청]");
 			// 서버주소와 port번호로 연결요청
-			socket.connect(new InetSocketAddress("localhost", 5001));
+			socket.connect(new InetSocketAddress("192.168.10.39", 5001));
 			System.out.println("[연결 성공]");
 
 			byte[] bytes = null;

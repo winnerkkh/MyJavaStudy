@@ -18,7 +18,7 @@ public class ServerExample {
 			serverSocket = new ServerSocket();// 서버소켓 객체 생성
 
 			// 서버소켓의 주소 및 port번호 세팅
-			serverSocket.bind(new InetSocketAddress("localhost", 5001));
+			serverSocket.bind(new InetSocketAddress("192.168.10.39", 5001));
 
 			while (true) {
 				System.out.println("[연결기다림]");
