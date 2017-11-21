@@ -48,7 +48,7 @@ public class ClientExample {
 			System.out.println("[데이터 보내기 성공]");
 			
 
-			
+			// 서버로부터 데이타 받기
 			
 			
 			
