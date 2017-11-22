@@ -16,7 +16,7 @@ public class ClientExample {
 			socket = new Socket();// 클라이언트는 하나의 소켓만 생성
 			System.out.println("[연결요청]");
 			// 서버주소와 port번호로 연결요청
-			socket.connect(new InetSocketAddress("192.168.10.39", 5001));
+			socket.connect(new InetSocketAddress("localhost", 5001));
 			System.out.println("[연결 성공]");
 			
 			
@@ -49,7 +49,11 @@ public class ClientExample {
 			
 
 			// 서버로부터 데이타 받기
-			
+			InputStream is = socket.getInputStream();//socket으로 들어오는 스트림 얻기
+			bytes = new byte[100];//byte단위의 값을 읽어들여 저장하는 배열
+			int readByteCnt = is.read(bytes);//읽어들이만큼에 저장후 저장된 갯수 readByteCnt에 대입
+			message = new String(bytes,0,readByteCnt);//
+			System.out.println("[데이타 받기 성공]:"+message);
 			
 			
 		} catch (Exception e) {

@@ -18,7 +18,7 @@ public class ServerExample {
 			serverSocket = new ServerSocket();// 서버소켓 객체 생성
 
 			// 서버소켓의 주소 및 port번호 세팅
-			serverSocket.bind(new InetSocketAddress("192.168.10.39", 5001));
+			serverSocket.bind(new InetSocketAddress("localhost", 5001));
 
 			while (true) {
 				System.out.println("[연결기다림]");
@@ -91,8 +91,7 @@ public class ServerExample {
 				
 				bytes = message2.getBytes();//String.getBytes()->문자열을 byte배열로 변환
 				os.write(bytes);// 전송
-				os.flush();// 메세지 밀어내기
-				
+				os.flush();// 메세지 밀어내기	
 				System.out.println("[데이터 보내기 성공]");
 
 				is.close();
