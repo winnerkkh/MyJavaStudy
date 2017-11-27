@@ -63,7 +63,7 @@ public class WindowLayoutExample4 {
 		
 		
 		//default operation 부착
-		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.pack();
 		frame.setVisible(true);
 		

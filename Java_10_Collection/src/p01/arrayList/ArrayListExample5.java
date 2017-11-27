@@ -14,11 +14,12 @@ public class ArrayListExample5 {
 
 		for (int i = 0; i < list.size(); i++)
 			System.out.println(list.get(i));
-
+		
 		list.add("홍길동");
 		list.add("일지매");
 		list.add("임꺽정");
 		list.add("이순신");
+	
 		// 배열 length고정, list는 size() 안에 저장된 요소의 갯수
 		int size = list.size();
 		for (int i = 0; i < size; i++)
