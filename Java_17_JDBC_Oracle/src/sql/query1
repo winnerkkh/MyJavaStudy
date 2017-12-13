@@ -1,0 +1,10 @@
+select empno,
+       ename,
+       sal,
+       hiredate,
+       d.dname dname
+  from emp e,
+       dept d
+ where e.deptno = d.deptno
+ ;
+   
